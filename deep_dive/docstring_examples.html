@@ -186,7 +186,7 @@ These special methods in turn call the functions in the Ivy API mentioned above.
 <li><p>vary the values and input shapes considerably between examples</p></li>
 <li><p>start with the simplest examples first. For example, this means using the default values for all optional arguments in the first example, and using small arrays, with a small number of dimensions, and with <em>simple</em> values for the function in question</p></li>
 <li><p>show an example with: (a) <code class="code docutils literal notranslate"><span class="pre">out</span></code> unused, (b) <code class="code docutils literal notranslate"><span class="pre">out</span></code> used to update a new array <code class="code docutils literal notranslate"><span class="pre">y</span></code>, and (c) <code class="code docutils literal notranslate"><span class="pre">out</span></code> used to inplace update the input array <code class="code docutils literal notranslate"><span class="pre">x</span></code> (provided that it shares the same <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> and <code class="code docutils literal notranslate"><span class="pre">shape</span></code> as the return)</p></li>
-<li><p>If broadcasting is relevant for the function, then show examples which highlight this.
+<li><p>show examples which highlight broadcasting (if it is relevant for the function).
 For example, passing in different shapes for two array arguments</p></li>
 </ol>
 <p>For all remaining examples, we can repeat input values from these <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> <em>functional</em> examples covered by points 1-5.</p>
@@ -198,7 +198,7 @@ The purpose is not to provide an excessive number of variations of possible func
 </ol>
 <p>For <em>nestable</em> functions which accept more than one argument, there should also be an example that:</p>
 <ol class="arabic simple" start="7">
-<li><p>passes in <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instances for multiple arguments</p></li>
+<li><p>passes in an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instances for multiple arguments</p></li>
 </ol>
 <p>In all cases, the containers should have at least two leaves.
 For example, the following container is okay to use for example purposes:</p>
@@ -845,7 +845,7 @@ Passing docstring tests is a necessary but not sufficient condition for the comp
 <p>If you have any questions, please feel free to reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982738352103129098">docstring examples channel</a> or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028297703089774705">docstring examples forum</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/rtce8XthiKA" class="video">
+src="https://www.youtube.com/embed/rtce8XthiKA" class="video" allowfullscreen="true">
 </iframe></section>
 </section>
 

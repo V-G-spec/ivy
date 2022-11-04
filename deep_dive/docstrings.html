@@ -161,7 +161,7 @@ In contrast, all backend implementations at <code class="xref py py-mod docutils
 <p>In order to explain how docstrings should be written, we will use <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.tan()</span></code> as an example.</p>
 <p>Firstly, if the function exists in the <a class="reference external" href="https://data-apis.org/array-api/latest/">Array API Standard</a>, the we start with the corresponding docstring as a template.
 These docstrings can be found under <a class="reference external" href="https://github.com/data-apis/array-api/tree/main/spec/API_specification/array_api">spec/API_specification/array_api</a>.</p>
-<p>Important: you should open the file in <strong>raw</strong> format.
+<p><strong>Important</strong>: you should open the file in <strong>raw</strong> format.
 If you copy directly from the file preview on GitHub before clicking <strong>raw</strong>, then the newlines will <strong>not</strong> be copied over, and the docstring will rendering incorrectly in the online docs.</p>
 <p>The <a class="reference external" href="https://data-apis.org/array-api/latest/">Array API Standard</a> docstring for <code class="code docutils literal notranslate"><span class="pre">tan</span></code> is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Calculates an implementation-dependent approximation to the tangent, having domain ``(-infinity, +infinity)`` and codomain ``(-infinity, +infinity)``, for each element ``x_i`` of the input array ``x``. Each element ``x_i`` is assumed to be expressed in radians.
@@ -309,11 +309,11 @@ For example, the class <a class="reference external" href="https://github.com/un
 Even though the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Linear</span></code> class wraps <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.linear()</span></code> in the forward pass defined in <a class="reference external" href="https://github.com/unifyai/ivy/blob/51c23694c2f51e88caef0f382f200b195f8458b5/ivy/stateful/layers.py#L84">ivy.Linear._forward</a>, the function signatures of <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.linear()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Linear._forward()</span></code> are still quite distinct, with the former including all trainable variables explicitly, and the latter having these implicit as internal instance attributes of the class.</p>
 <p>Therefore, with the exception of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> methods which directly wrap functions in the functional API, we should always add full and thorough docstrings to all methods of all other classes in Ivy, including cases where these also directly wrap functions in the functional API.</p>
 <p><strong>Round Up</strong></p>
-<p>These examples should hopefully give you a good understanding of what is required when adding docstings.</p>
+<p>These examples should hopefully give you a good understanding of what is required when adding docstrings.</p>
 <p>If you have any questions,please feel free to reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982738313897197600">docstrings channel</a> or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028297612408913982">docstrings forum</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/TnshJ8swuJM" class="video">
+src="https://www.youtube.com/embed/TnshJ8swuJM" class="video" allowfullscreen="true">
 </iframe></section>
 
 

@@ -192,10 +192,10 @@ This function calls <a class="reference external" href="https://github.com/unify
 As discussed in the <a class="reference internal" href="function_wrapping.html#function-wrapping"><span class="std std-ref">Function Wrapping</span></a> section, this is applied to all applicable functions dynamically during <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/backend_handler.py#L204">backend setting</a>.</p>
 <p>Overall, <a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py#L720">ivy.default_device</a> infers the device as follows:</p>
 <ol class="arabic simple">
-<li><p>if the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument is provided, use this directly</p></li>
-<li><p>otherwise, if an array is present in the arguments (very rare if the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument is present), set <code class="code docutils literal notranslate"><span class="pre">arr</span></code> to this array.
+<li><p>If the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument is provided, use this directly</p></li>
+<li><p>Otherwise, if an array is present in the arguments (very rare if the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument is present), set <code class="code docutils literal notranslate"><span class="pre">arr</span></code> to this array.
 This will then be used to infer the device by calling <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.dev()</span></code> on the array</p></li>
-<li><p>otherwise, if no arrays are present in the arguments (by far the most common case if the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument is present), then use the global default device, which currently can either be <code class="code docutils literal notranslate"><span class="pre">cpu</span></code>, <code class="code docutils literal notranslate"><span class="pre">gpu:idx</span></code> or <code class="code docutils literal notranslate"><span class="pre">tpu:idx</span></code>.
+<li><p>Otherwise, if no arrays are present in the arguments (by far the most common case if the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument is present), then use the global default device, which currently can either be <code class="code docutils literal notranslate"><span class="pre">cpu</span></code>, <code class="code docutils literal notranslate"><span class="pre">gpu:idx</span></code> or <code class="code docutils literal notranslate"><span class="pre">tpu:idx</span></code>.
 The default device is settable via <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.set_default_device()</span></code>.</p></li>
 </ol>
 <p>For the majority of functions which defer to <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/func_wrapper.py#L286">infer_device</a> for handling the device, these steps will have been followed and the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument will be populated with the correct value before the backend-specific implementation is even entered into.
@@ -259,7 +259,7 @@ Therefore, whereas the <code class="code docutils literal notranslate"><span cla
 <p>If you have any questions, please feel free to reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982738108166602752">devices channel</a> or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028297346662015057">devices forum</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/-Y1Ofk72TLY" class="video">
+src="https://www.youtube.com/embed/-Y1Ofk72TLY" class="video" allowfullscreen="true">
 </iframe></section>
 </section>
 

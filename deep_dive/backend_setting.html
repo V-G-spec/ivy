@@ -165,12 +165,12 @@ If the framework can be inferred from the inputs, then this is always used, and 
 numpy will always be the default backend unless it is explicitly set or is inferred.
 When calling <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/backend_handler.py#L154">this function</a> for setting the backend, the following steps are performed:</p>
 <ol class="arabic simple">
-<li><p>store a global copy of the original <code class="xref py py-attr docutils literal notranslate"><span class="pre">ivy.__dict__</span></code> to <code class="code docutils literal notranslate"><span class="pre">ivy_original_dict</span></code>, if this is not already stored.</p></li>
-<li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/backend_handler.py#L184">import the backend module</a>, for example <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy.functional.backends.torch</span></code>, if the backend has been passed in as a string.
+<li><p>Store a global copy of the original <code class="xref py py-attr docutils literal notranslate"><span class="pre">ivy.__dict__</span></code> to <code class="code docutils literal notranslate"><span class="pre">ivy_original_dict</span></code>, if this is not already stored.</p></li>
+<li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/backend_handler.py#L184">Import the backend module</a>, for example <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy.functional.backends.torch</span></code>, if the backend has been passed in as a string.
 All functions in this unmodified backend module are <em>primary</em> functions, because only primary functions are stored in <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy.functional.backends.backend_name</span></code>.
 This backend module does not include any <em>compositional</em> functions.</p></li>
-<li><p>loop through the original <code class="code docutils literal notranslate"><span class="pre">ivy_original_dict</span></code> (which has all functions, including compositional), and (a) add the primary function from the backend if it exists, (b) else add the compositional function from <code class="code docutils literal notranslate"><span class="pre">ivy_original_dict</span></code>.</p></li>
-<li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/backend_handler.py#L204">wrap the functions</a> where necessary, extending them with shared repeated functionality and <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/backend_handler.py#L212">writing the function</a> to <code class="xref py py-attr docutils literal notranslate"><span class="pre">ivy.__dict__</span></code>
+<li><p>Loop through the original <code class="code docutils literal notranslate"><span class="pre">ivy_original_dict</span></code> (which has all functions, including compositional), and (a) add the primary function from the backend if it exists, (b) else add the compositional function from <code class="code docutils literal notranslate"><span class="pre">ivy_original_dict</span></code>.</p></li>
+<li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/backend_handler.py#L204">Wrap the functions</a> where necessary, extending them with shared repeated functionality and <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/backend_handler.py#L212">writing the function</a> to <code class="xref py py-attr docutils literal notranslate"><span class="pre">ivy.__dict__</span></code>
 Wrapping is used in order to avoid excessive code duplication in every backend function implementation.
 This is explained in more detail in the next section: <a class="reference internal" href="function_wrapping.html#function-wrapping"><span class="std std-ref">Function Wrapping</span></a>.</p></li>
 </ol>
@@ -217,7 +217,7 @@ If the user’s system doesn’t have the backend framework installed, we defaul
 <p>If you have any questions, please feel free to reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982737886963187772">backend setting channel</a> or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982737886963187772">backend setting forum</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/ROt5E8aHgww" class="video">
+src="https://www.youtube.com/embed/ROt5E8aHgww" class="video" allowfullscreen="true">
 </iframe></section>
 </section>
 

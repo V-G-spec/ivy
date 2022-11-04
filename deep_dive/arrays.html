@@ -201,9 +201,9 @@ The reason we always return <code class="xref py py-class docutils literal notra
 <p>Given that all Ivy functions return <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances, all Ivy functions must also support <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances in the input, otherwise it would be impossible to chain functions together!</p>
 <p>Therefore, most functions in Ivy must adopt the following pipeline:</p>
 <ol class="arabic simple">
-<li><p>convert all <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances in the input arguments to <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances</p></li>
-<li><p>call the backend-specific function, passing in these <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances</p></li>
-<li><p>convert all of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances which are returned from the backend function back into <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances, and return</p></li>
+<li><p>Convert all <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances in the input arguments to <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances</p></li>
+<li><p>Call the backend-specific function, passing in these <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances</p></li>
+<li><p>Convert all of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances which are returned from the backend function back into <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances, and return</p></li>
 </ol>
 <p>Given the repeating nature of these steps, this is all entirely handled in the <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/func_wrapper.py#L149">inputs_to_native_arrays</a> and <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/func_wrapper.py#L209">outputs_to_ivy_arrays</a> wrappers, as explained in the <a class="reference internal" href="function_wrapping.html#function-wrapping"><span class="std std-ref">Function Wrapping</span></a> section.</p>
 <p>All Ivy functions <em>also</em> accept <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances in the input.
@@ -224,7 +224,7 @@ For the reasons explained above, this would be a problem.</p>
 <p>If you have any questions, please feel free to reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/933380487353872454">arrays channel</a> or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028296936203235359">arrays forum</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/tAlDPnWcLDE" class="video">
+src="https://www.youtube.com/embed/tAlDPnWcLDE" class="video" allowfullscreen="true">
 </iframe></section>
 </section>
 
